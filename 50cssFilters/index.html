@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Filters </title>
+    <style>
+
+
+        .img1{
+            height: 500px;
+            /* width: 100px; */
+            /* values in filter is given in the 0 to 1 value or in percentage  */
+            filter: blur(5px);
+            /* filter: contrast(400%) ; */
+
+            /* multiple filter property can be added in one line  */
+            filter: contrast(400%) grayscale(70%);
+
+        }
+        .img2{
+             height: 500px;
+             filter: brightness(200%) contrast(0.75);
+        }
+        .img3{
+             height: 500px;
+             filter: sepia(100%);
+             filter: opacity(0.5);
+             /* filter: invert(1); */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://th.bing.com/th/id/R.3ee78305725e614c501d6a9a3c473501?rik=rR9Z%2brsbmKUqew&riu=http%3a%2f%2fi.huffpost.com%2fgen%2f920563%2fthumbs%2fo-BEST-ACTOR-GOLDEN-GLOBES-facebook.jpg&ehk=eP%2bqkMAllynPO7k4CXcD%2fDTkNwidoWyzcCPWbyqr%2fdI%3d&risl=&pid=ImgRaw&r=0" alt="" class="img1">
+        <img src="https://1.bp.blogspot.com/-XscNgQHkp3g/XxqIh4EQpgI/AAAAAAAAAp8/_Tp5c_7Sfig68UN22drwqaGZEuji7Au8wCNcBGAsYHQ/s2048/Johnny%2BDepp.jpg" alt="" class="img2">
+        <img src="https://wallpaperaccess.com/full/1110748.jpg" alt="" class="img3">
+
+    </div>
+    <div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Filter_effects" target="_blank">CSS Filters DOCS</a>
+    </div>
+</body>
+</html>

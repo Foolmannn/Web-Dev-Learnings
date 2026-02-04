@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercis 8 </title>
+    <style>
+        .container{
+            height: 70vh;
+            width: 90vw;
+            background-color: aquamarine;
+            position: relative;
+
+        }
+        .ball{
+            bottom: 0;
+            left: 0;
+            position:absolute;
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            background-color: red;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: xaxis 10s linear 2s infinite alternate
+             ,yaxis 2s ease-out 1s infinite alternate;
+        }
+        @keyframes xaxis{
+            from{
+                left: 0;
+            }
+            to{
+                left: 80vw;
+            }
+
+        }
+        @keyframes yaxis{
+                   from{
+                    bottom: 0px;
+            }
+            to{
+                bottom: 20vh;
+                transform: translateY(-50px)
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.box{
+    background-color: aqua;
+}
+*{
+    margin: 0px;
+    padding:0px;
+}
+.box1{
+    color:red;
+    padding: 10px;
+    margin:5px;
+    border: 3px solid blue;
+}
+.box2{
+    margin: 2px;
+    border: 3px solid black;
+    padding:10px;
+    color:green;
+    height: 200px;
+    /* box-sizing: border-box makes the height is the value of the both padding the border and the content other wise the height of the content will be 200 total only for the content not including padding and border  */
+    box-sizing:border-box;
+}
+.box3{
+    margin: 25px;
+    border:3px solid black;
+    padding:10px;
+}
+.box4{
+    margin: 25px;
+    border:3px solid black;
+    padding:10px;
+}

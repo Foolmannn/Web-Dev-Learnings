@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLex box in css</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* align-content: flex-start; */
+            /* items while using flex arranges in the flex direction 
+             flex direction is by default row wise from left to right */
+            /* flex-direction: column; */
+             /* flex-direction: column-reverse; */
+             flex-wrap: wrap;
+             /* no wrap is default  */
+             /* flex-flow: column row-reverse; */
+             /* flex flow is used to use both flex direction and flex wrap  */
+             /* gap: 30px;
+              */
+              /* row-gap: 20px; */
+              /* column-gap: 20px; */
+              gap: 20px 40px;
+
+        }
+        .item{
+            border: 2px solid purple;
+            background-color: green;
+            /* margin: 10px; */
+            padding: 10px;
+            height: 20px;
+            width: 20px;
+
+/* FLEX ITEMS PROPERTY   */
+
+            /* flex-grow: 2; */
+            
+        }
+        /* order is property of the flex box ITEMS which give order and default is 0 . the more the order first it comes ie 1 order comes first then other  */
+        .order-1{
+            order: 1;
+        }
+        order-2{
+            order: 2;
+        }
+        order-3{
+            order: 3;
+        }
+        .item1{
+            /* flex grow 2 means increases the item double compared to others  */
+            /* flex-grow: 2; */
+            flex-shrink: 4;
+        }
+        .item2{
+            align-self: flex-end;
+          
+        }
+        .item3{
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item order-1" >6</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

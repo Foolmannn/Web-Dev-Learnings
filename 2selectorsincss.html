@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ELement selector  */
+        div{
+            background-color: rgb(249, 205, 205);
+        }
+        /* CLass selectors  */
+        .div1{
+            background-color: green;
+        }
+        /* id selectors  */
+        #red{
+            color:red;
+        }
+        /* Child selectors  */
+        div > p{
+            color:blue;
+        }
+        /* descendent selectors  */
+        /* Descedent are used to target the descendent of the elements and it is done as below by using the space between the parent adn descendent  */
+        div article {
+            color:green;
+        }
+        /* Universal selectors  */
+        /* universal selectors are used to select all the elements  */
+        *{
+            margin:0;
+            padding-left: 10px;
+        }
+        /* Psuedo Selectors  */
+        a:visited{
+            color: yellow;
+        }
+        a:link{
+            color:red;
+        }
+        a:active{
+            background-color: rgb(57, 12, 218);
+        }
+        a:hover{
+            color:brown;
+        }
+        p:first-child{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p> I am this first child of this main section</p>
+        <p> I am this second child of this main section so the pusedo p:firstchild selector didn't applied to me</p>
+    </main>
+    <div>
+        I am the div.
+        <p>p is direct child of this div and i am styled using the child selectors...
+                    <article> I am article and I am indirect child of the div so the child selector is not applied </article>
+        </p>
+
+    </div>
+    <div class="div1"> This is the second div </div>
+    <p id="red">THis is the paragraph styled using the id selectors..
+     <div> <p> <article> I am indirect child but a descendent so the descendent selector applies the style ..Descendent selector is used using the space after the parent and descendent elements /</article></p></div>   
+    </p>
+    <a href="https://google.com" target="_blank">Go to Google</a>
+    <a href="https://youtube.com" target="_blank">Go to youtube</a>
+    <a href="https://facebook.com" target="_blank">Go to facebook</a>
+</body>
+</html>

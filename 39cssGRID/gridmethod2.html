@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80vw;
+            border: 2px solid rgb(133, 133, 0);
+            display: grid;
+            grid-template-areas: "nav nav nav "
+                                 "side article article"
+                                 "footer footer footer"
+
+    
+        }
+        .item{
+            border: 2px solid black;
+            height: 50px;
+            /* width: 40px; */
+
+        }
+        .item1{
+            grid-area: nav;
+            background-color: aqua;
+        }
+        .item2{
+            grid-area: side;
+            background-color: rgb(194, 76, 194);
+        }
+        .item3{
+            grid-area: article;
+            background-color: rgb(39, 175, 27);
+        }
+        .item4{
+            grid-area: footer;
+            background-color: rgb(154, 179, 179);
+        }
+        .item5{
+            grid-area: nav;
+            /* this create overlap at item 1  */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+ 
+    </div>
+</body>
+</html>

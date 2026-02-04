@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Extra Selectors </title>
+    <style>
+        .box:first-child{
+            background-color: rgb(206, 147, 147);
+        }
+        /* .box::first-line{
+            color: green;
+        } */
+         .box::first-letter{
+            color: purple;
+            font-size: 50px;
+         }
+        .boxes *{
+            color: rgb(0, 34, 20);
+        }
+        [data-color="primary"]{
+            margin-top: 10px;
+            padding: 10px;
+        }
+        /* grouping of the selectors  */
+        div, p, a, .box {
+            font-size: large;
+        }
+        .box:nth-child(even){
+            background-color: aqua;
+        }
+        /* this is used for child from the last  */
+        .box:nth-last-child(1){
+            font-size: 34px;
+        }
+        /* dynamically insertion of content in html using the css  */
+        .boxes::before{
+            content: "This demonstrates the dynamically insertion of content using css";
+        }
+        .boxes::after{
+            content: "these are called psuedo elements "
+        }
+        /* when the text is selected then this applies the style  */
+        ::selection{
+            color: green;
+            background-color: black;
+        }
+        input::placeholder{
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa odio ad, ducimus a dignissimos saepe commodi porro, tenetur reiciendis, magnam aperiam labore! Nobis mollitia architecto corporis temporibus provident. Neque odio incidunt a reiciendis voluptate accusamus, ea molestiae, in tempore debitis provident aliquam saepe natus velit explicabo ipsum praesentium et sequi ullam beatae? Aspernatur eius, quos quae molestias saepe veritatis nam neque quas rem asperiores dignissimos commodi repudiandae eos consectetur facilis maxime nobis autem ex illo itaque! Corrupti expedita unde quia laudantium? Aliquam, veritatis quo voluptates quos odio esse aut possimus vel voluptatem. Amet nesciunt eum assumenda odio repellat, aliquam ab.Hey I Am A Box</div>
+        <div class="box" data-color="primary">Hey I Am A Box</div>
+        <div class="box">Hey I Am A Box</div>
+        <input type="text" placeholder="Type your name here"><br>
+    </div>
+</body>
+</html>

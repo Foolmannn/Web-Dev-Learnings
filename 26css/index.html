@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .box{
+            width: 30vw;
+            height: 10vh;
+            border: 2px solid black;
+            overflow: scroll;
+
+/* if overflow or not show the scroll  */
+
+        }
+        .box1{
+            width: 30vw;
+            height: 40vh;
+            border: 2px solid black;
+            overflow: auto;
+            /* if overflow then only show the scroll bar  */
+            
+        }
+            
+        .box2{
+            width: 30vw;
+            height: 10vh;
+            border: 2px solid black;
+            overflow: scroll;
+            white-space: nowrap;
+            /* white-space: nowrap; makes the content horizontal and text-overflow elipsis make the .. at the end  */
+                        text-overflow: ellipsis;
+        
+        }
+        .box3{
+            width: 30vw;
+            height: 40vh;
+            border: 2px solid black;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            /* if overflow-x  then applies on the horizontal only and y on the vertical show the scroll bar  */
+            
+        }
+        
+        .box4{
+            width: 30vw;
+            height: 10vh;
+            border: 2px solid black;
+            overflow: auto scroll;
+            /* overflow shorthand can be applied first value x then second y   */
+            
+        }
+
+        </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus tenetur possimus obcaecati totam culpa ipsam eius eveniet aperiam. Architecto nobis necessitatibus veritatis saepe, vero voluptatibus iure deserunt maiores eos, natus iusto quibusdam dolores, quia nulla autem omnis fuga? Omnis pariatur cumque assumenda perspiciatis ratione!
+    </div>
+        <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus tenetur possimus obcaecati totam culpa ipsam eius eveniet aperiam. Architecto nobis necessitatibus veritatis saepe, vero voluptatibus iure deserunt maiores eos, natus iusto quibusdam dolores, quia nulla autem omnis fuga? Omnis pariatur cumque assumenda perspiciatis ratione!
+    </div>
+    </div>
+        <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus tenetur possimus obcaecati totam culpa ipsam eius eveniet aperiam. Architecto nobis necessitatibus veritatis saepe, vero voluptatibus iure deserunt maiores eos, natus iusto quibusdam dolores, quia nulla autem omnis fuga? Omnis pariatur cumque assumenda perspiciatis ratione!
+    </div>
+    </div>
+        <div class="box3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus tenetur possimus obcaecati totam culpa ipsam eius eveniet aperiam. Architecto nobis necessitatibus veritatis saepe, vero voluptatibus iure deserunt maiores eos, natus iusto quibusdam dolores, quia nulla autem omnis fuga? Omnis pariatur cumque assumenda perspiciatis ratione!
+    </div>
+    </div>
+        <div class="box4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus tenetur possimus obcaecati totam culpa ipsam eius eveniet aperiam. Architecto nobis necessitatibus veritatis saepe, vero voluptatibus iure deserunt maiores eos, natus iusto quibusdam dolores, quia nulla autem omnis fuga? Omnis pariatur cumque assumenda perspiciatis ratione!
+    </div>
+</body>
+</html>
