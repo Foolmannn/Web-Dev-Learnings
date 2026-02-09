@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation </title>
+    <style>
+        .container{
+            background-color: rgb(27, 105, 131);
+            height: 50vh;
+            width: 50vw;
+
+        }
+.box{
+    width: 34px;
+    height: 45px;
+    background-color: rgb(221, 153, 63);
+    padding: 10px;
+    margin: 10px;
+    animation-name: SumansAnimation,suman2;
+    animation-duration: 5s;
+    animation-iteration-count: 3; 
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+    /* animation-play-state: paused; */
+  
+  
+    /* animation-direction: normal;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    animation-direction: alternate-reverse; */
+
+
+    /* shorthand of the animation:  ; */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode;
+     
+    animation: suman2 5s ease-out 1s 5;
+    
+    
+    /* animation: suman2 3s ease-out 2s 5 backwards; */
+
+}
+.box0{
+       animation-direction: normal;
+}
+.box1{
+    animation-direction: reverse;
+
+}
+.box2{
+
+  animation-direction: alternate;
+}
+.box3{
+  
+    animation-direction: alternate-reverse;
+}
+@keyframes SumansAnimation{
+    from{
+    background-color: red;
+    }
+    to{
+        transform: translatex(1000px);
+        background-color: yellow;
+
+    }
+}
+@keyframes suman2{
+    10%{
+        transform: rotate(100deg);
+    }
+    30%{
+        transform: rotate(180deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(50deg);
+    }
+    100%{
+        transform: rotate(100deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box0">
+            Box
+        </div>
+        <div class="box box1">
+            BOx2
+        </div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+    <div class="docs">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using">DOCs</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box2{
+            margin: 100px;
+            padding: 0;
+            border: 2px solid blue;
+            display: inline;
+        }
+        .box3{
+            display: inline-block;
+            /* inline properties block the top padding and to set the width  */
+            /* to set the width we need to use the display: inline-block;  */
+            padding: 45px;
+              margin: 100px;
+              width: 200px;
+            border: 2px solid black;
+        }
+        .box4{
+            border: 2px solid black;
+            margin: 100px;
+            padding: 20px;
+             display: none;
+             /* display none removes all the elements with its conetent and the margin border etc  */
+        }
+        .box5{
+             border: 2px solid black;
+            padding: 20px;
+            margin: 100px;
+            visibility: hidden;
+            /* visibility hides the elements but preserves the padding margin etc  */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is the box
+    </div>
+    <div>
+        This is the another block element
+    </div>
+    <span>
+        I am a inline element
+
+    </span>
+    <span>
+        I am another inline element
+    </span>
+      <div class="box2">
+        This is the box
+    </div>
+    <div class="box3">
+        This is the another block element
+    </div>
+    <span class="box4">
+        I am a inline element
+
+    </span>
+    <span class="box5">
+        I am another inline element
+    </span>
+</body>
+</body>
+</html>

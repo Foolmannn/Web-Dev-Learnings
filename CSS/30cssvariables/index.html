@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variable </title>
+    <style>
+        /* css variable can hold any type of value that may be color, padding margin with the numerical values , string can be stored using the variables  */
+        /* root selctor is used to declare the global variable  */
+        :root{
+            --color:blue;
+            --seccolor:rgb(82, 195, 247);     
+            --defpad: 10px;    
+            --defopacity: 0.3;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            background-color: var(--color);
+
+        }
+        .container{
+            margin: 10px;
+            /* pink here is the default value for the variable if the seccolor has no value  */
+            background-color: var(--seccolor, pink);
+            border: 2px solid var(--color);
+        }
+        ul{
+            display: flex;
+            padding: var(--defpad);
+
+
+        }
+        ul li{
+            list-style: none;
+            padding: 20px;
+
+
+        }
+        ul li:first-child{
+            /* declaring variable inside the css block is used for the local variable which will overwrite the variable value for the section locally  */
+            --color:rgb(145, 215, 238);
+            background-color: var(--color);
+            opacity: var(--defopacity);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>Categories</li>
+            <li>About</li>
+            
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="container">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur hic quaerat recusandae nesciunt similique impedit! Neque, et odit? Expedita earum rerum aliquam? Voluptas voluptatum vero cupiditate ad sapiente accusamus quo ducimus expedita praesentium alias aliquam suscipit officia dignissimos facilis officiis repellat illo, nostrum libero voluptatibus.
+    </div>
+</body>
+</html>

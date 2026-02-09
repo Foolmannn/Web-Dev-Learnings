@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float and Clear</title>
+    <style>
+        /* Avoid using the float and clear in modern days USES of the flex box and grid is modern approach  */
+        .cards{
+            border: 2px solid rgb(0, 0, 0);
+            display: flow-root;
+            /* display: flow-root; is used to avoid the overflow of image while using the float property  */
+        }
+        .card{
+            border: 2px solid red;
+        }
+        img{
+            /* float is used to avoid cropping of the content due to two contents  */
+            float:left;
+        }
+        .card:nth-child(3){
+            clear:left;
+            /* clear:left; clears the space of the float on the left or the right or both  */
+
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+  
+        <img src="https://as1.ftcdn.net/v2/jpg/02/85/51/44/1000_F_285514482_EdWlMKZzjVV6YH2pIXUmAbjvaMv5kRep.jpg" alt="" width="500px">
+        <div class="card"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, ab illo. Dolor fugiat adipisci ducimus, quam saepe, itaque delectus, eum earum repellendus illo sed deserunt optio praesentium voluptas molestias modi voluptatum officiis? Optio ab eveniet facilis earum exercitationem perspiciatis magnam molestias voluptatibus atque incidunt.</p></div>
+        <div class="card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto tempore accusantium repellat cupiditate dicta deserunt rem laboriosam labore eveniet, quis ea necessitatibus porro quasi voluptatibus animi dignissimos nesciunt asperiores cum provident eum! Deleniti reiciendis eius consequuntur impedit architecto fuga laborum, asperiores ut odio corrupti hic mollitia dolorum officia maiores consequatur voluptates temporibus inventore quam perspiciatis cumque sequi aliquid eum! Ex odio, incidunt explicabo sunt itaque veniam pariatur, maiores vero labore accusantium quasi animi corrupti inventore, quidem sed recusandae. Repudiandae doloribus quisquam adipisci sed, eveniet quaerat similique reprehenderit veritatis vitae nihil ullam labore sunt modi voluptates tempore accusamus incidunt, voluptatibus consequatur. Voluptatem, quod blanditiis expedita suscipit, itaque in voluptate quidem dolorum porro animi necessitatibus fugiat incidunt. Nobis, repellat cupiditate reprehenderit sint harum quisquam corrupti fugit dolorum? Neque iste natus quibusdam. Voluptas ea repellendus labore beatae, dolores deleniti odio et veritatis vero quos quibusdam porro iusto sapiente at laudantium, vitae accusamus ipsa architecto non animi, accusantium commodi suscipit dolorem! Consequatur enim, tempore maxime voluptates tempora eum accusantium architecto optio, cumque possimus tenetur recusandae dolorem mollitia magnam temporibus, officiis quos corrupti autem quisquam aperiam distinctio sequi illo! Repellendus et architecto ullam in animi reprehenderit, cupiditate accusantium mollitia enim veritatis culpa nisi nostrum harum ab est iusto! Deserunt fugit quibusdam modi soluta, ex iste commodi. Suscipit tenetur, doloremque ea mollitia quo quod natus facere fugit fuga accusantium cupiditate odit dolore optio assumenda totam amet ullam dolores quas eum deleniti magni porro. Atque nobis fugit facilis quod esse odit?</div>
+        <div class="card">Card3</div>
+        <div class="card">Card4</div>
+    </div>
+</body>
+</html>

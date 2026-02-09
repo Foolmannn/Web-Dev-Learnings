@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <caption>Student details:</caption>
+        <br><br>
+        <thead>
+            Header content
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>class</th>
+                <th>Roll</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Sam</td>
+                <td>17</td>
+                <td>12</td>
+                <td>23</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- colspan is used to add the no of cell the data to use  -->
+                <td colspan="2">Rajesh</td>
+                <td>16</td>
+                <td>11</td>
+                <td>45</td>
+            </tr>
+
+            Footer content:
+        </tfoot>
+    </table>
+</body>
+
+</html>

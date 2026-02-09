@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6 using the flexbox</title>
+    <style>
+        .nav {
+            display: flex;
+        height: 10vh;
+        border: 2px solid rgb(189, 189, 189);
+        justify-content: space-around;
+        /* justify-content: space-between; */
+        border-radius: 10px;
+        top: 0;
+        position: sticky;
+        flex-wrap: wrap;
+        background-color: rgb(238, 238, 238);
+        align-content: space-around;
+        flex-grow: unset;
+      }
+      .links ul {
+        display: flex;
+      }
+      .links ul li {
+        list-style: none;
+        align-items: center;
+
+        /* display: inline-flex;       */
+        /* display: inline-block; */
+        padding: 15px;
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      .nav .logo {
+        /* align-self: flex-start; */
+        margin-top: 10px;
+        align-items: flex-start;
+      }
+      .heading {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        text-align: center;
+        margin: 50px;
+      }
+      .nav .links ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      .down {
+          align-self: center;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: rgb(223, 188, 36);
+        border: 2px solid gray;
+        border-radius: 10px;
+      }
+      .lang {
+        padding: 10px;
+        align-self: center;
+      }
+      .search {
+        align-self: center;
+        margin-left: 10px;
+      }
+      .nav .lang a {
+        text-decoration: none;
+        color: black;
+      }
+      .nav .down a {
+        text-decoration: none;
+        color: black;
+      }
+      .nav p {
+          /* display: flex; */
+        font-family: "Times New Roman", Times, serif;
+        font-size: large;
+        color: grey;
+        height: 60px;
+        width: 50vw;
+        margin: auto;
+        /* align-content: center; */
+        justify-content: center;
+      }
+      .right {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .downloadlink a {
+        border: 2px solid black;
+        display: inline-block;
+        margin-top: 50px;
+        /* justify-content: center; */
+        position: relative;
+        margin-left: 40vw;
+          text-decoration: none;
+        color: black;
+
+        /* margin: auto; */
+
+        padding: 20px;
+        background-color: rgb(223, 188, 36);
+        border-radius: 10px;
+      }
+       /* .downloadlink a {
+        justify-content: center;
+        /* align-items: center; */
+        /* text-decoration: none; */
+        /* color: black; */
+    
+      .search a {
+        text-decoration: none;
+        padding: 5px;
+        color: black;
+      } 
+      .nav ul li a:hover {
+        border: 2px solid grey;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(231, 231, 231);
+    }
+      .nav .right .lang a:hover,
+      .search a:hover {
+        border: 2px solid grey;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(231, 231, 231);
+      }
+      .first {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .first span {
+          width: 60vw;
+          justify-content: center;
+          text-align: center;
+        }
+        
+      .langlink {
+        margin-top: 30px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        justify-content: center;
+        /* align-items: center; */
+        /* align-content: center; */
+
+        /* grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:"article article article"; 
+                        "article article article"; */
+      }
+      .langlink .langbox {
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        width: 20vw;
+        background-color: rgb(242,240,236);
+        padding: 20px;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-left: 100px;
+        /* text-align: center; */
+    }
+      .langbox p {
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: black;
+        /* text-align: center; */
+      }
+  
+      .langbox a {
+        background-color: rgb(255,215,65);
+        text-decoration: none;
+        padding: 5px;
+        border: 2px solid gray;
+        border-radius: 9px;
+        color: rgb(218, 64, 64);
+    }
+    @media screen and (max-width:1000px) {
+        .nav{
+            flex-direction: column;
+        }
+        .langlink{
+            /* background-color: red; */
+
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .langlink .langbox{
+            height: 20vh;
+            width: 70vw;
+        }
+    }
+    </style>
+    <script
+    src="https://kit.fontawesome.com/d91e93f6ba.js"
+    crossorigin="anonymous"
+    ></script>
+</head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <a href="ultraedit.com"><img src="image.png" alt="" width="150px" /></a>
+      </div>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="#">Products<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li><a href="#">Buy</a></li>
+          <li>
+            <a href="#">Support<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li>
+            <a href="#">Learn<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li>
+            <a href="#">Company <i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li>
+          <div class="right">
+            <div class="down">
+              <a href="#">Download</a>
+            </div>
+            <div class="lang">
+              <a href="/"><i class="fa-solid fa-globe"></i>English</a>
+            </div>
+            <div class="search">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section class="first">
+      <!-- <i class="fa-brands fa-windows"></i> -->
+      <div class="heading">
+        Download UltraEdit for Windows
+        <img src="image2.png" alt="" width="40px" />
+      </div>
+      <span
+        style="
+          font-family:
+            &quot;Gill Sans&quot;, &quot;Gill Sans MT&quot;, Calibri,
+            &quot;Trebuchet MS&quot;, sans-serif;
+        "
+        >Download and try Ultraedit before you buy it! This download includes the full Windows version of the text editor.</span
+      >
+    </section>
+    <div class="downloadlink">
+      <a href="/"
+        ><i class="fa-brands fa-apple"></i>
+        <i class="fa-brands fa-linux"></i> Download Mac or linux version</a
+      >
+    </div>
+    <section class="second">
+      <div class="langlink">
+        <div class="langbox boxenglish">
+          <p>English</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxgerman">
+          <p>German</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxspanish">
+          <br />
+          <p>Spanish</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+      <div class="langbox boxitalian">
+        <br>
+        <p>Italian</p>
+        <a href="#">Download 64-bit</a>
+</div>
+        <div class="langbox boxfrench">
+          <br>
+          <p>French</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxkorean">
+          <br>
+          <p>Korean</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxjapanese">
+          <br>
+          <p>Japanese</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxbrazilian">
+          <br>
+          <p>Brazillian</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+        <div class="langbox boxchinese">
+          <br>
+          <p>Chinese</p>
+          <a href="#">Download 64-bit</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

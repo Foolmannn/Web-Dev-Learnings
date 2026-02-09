@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transform</title>
+    <style>
+        .container{
+         border: 2px solid purple;
+         width: 90vw;
+         height: 80vh;
+        }
+        .box1{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: rotate(45deg);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box2{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: rotate(0.5turn);
+            /* 1 turn means 360 turning  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box3{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+    
+            transform: rotateX(40deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box4{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+     
+            transform: rotateY(40deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box5{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+
+            transform: rotateZ(50deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box6{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: scale(1.5);
+            /* scale increase the size by times in x y in 3d  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box7{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: skew(34deg);
+            /* skew doesnot apply in z axis  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box7{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: skew(34deg);
+            /* skew doesnot apply in z axis  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box8{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            /* transform: translateX(50px); */
+            transform: translateX(100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box9{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(200%) skew(34deg) rotatey(50deg);
+
+        }
+        .box10{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+        transform: translate(-100%);
+        /* this can be used to hide the items  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box11{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: rotate(0.125turn);
+            transform-origin: 10% 20%;
+            /* transform: origin is used to give the origin for the transformation ; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box12{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: rotateX(0.25turn);
+            /* 90 degree turn in x axis make the item get lost  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box13{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            transform: translatez(200px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+BOX1
+        </div>
+        <div class="box2">
+BOX2
+        </div>
+        <div class="box3">
+BOX3
+        </div>
+        <div class="box4">
+BOX4
+        </div>
+        <div class="box5">
+            BOX5
+        </div>
+        <div class="box6">
+            BOX6
+        </div>
+        <div class="box7">
+BOX7
+        </div>
+        <div class="box8">
+BOX8
+        </div>
+        <div class="box9">
+BOX9
+        </div>
+        <div class="box10">
+BOX10
+        </div>
+        <div class="box11">
+BOX11
+        </div>
+        <div class="box12">
+BOX12
+        </div>
+        <div class="box13">
+BOX13
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS object fit and position</title>
+    <style>
+
+        .container{
+            /* background-color: aqua; */
+            background-image: url(https://images.pexels.com/photos/19566206/pexels-photo-19566206.jpeg?cs=srgb&dl=pexels-vikashkr50-19566206.jpg&fm=jpg);
+            background-position: center center;
+            /* background-repeat: no-repeat;
+             */
+            background-repeat: repeat-x;
+            height: 100vh;
+            width: 100vw;
+            border: 2px solid black;
+
+        }
+        .img1{
+                     height: 300px;
+            width: 300px;
+            /* when no object-fit is given it is fill  */
+            /* object-fit: fill; */
+        }
+        .img2{
+            height: 300px;
+            width: 300px;
+            /* cover crops to fit the image to the box without altering theaspect ratio  */
+            object-fit: cover;
+
+        }
+        .img3{
+            height: 300px;
+            width: 300px;
+            /* contain shows the full object and maintains the aspect ratio but may leaves empty space  */
+            object-fit: contain;
+
+        }
+        .img4{
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            /* object-position: top right; */
+            object-position: bottom right;
+
+        }
+        .img5{
+            height: 300px;
+            width: 300px;
+            /* object-fit: scale-down; */
+            object-fit: cover;
+            /* object-position: left right value can be given  */
+            object-position: 54px 100px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="img"src ="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" >
+<img class="img1"src ="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" >
+<img  class="img2" src="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+<img  class="img3" src="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+<img  class="img4" src="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+<img  class="img5" src="https://tse2.mm.bing.net/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+    </div>
+    <div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/object-fit" target="_blank">Object fit DOCS</a>
+    </div>
+    <div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background" target="_blank">BG DOCS</a>
+    </div>
+</body>
+</html>
