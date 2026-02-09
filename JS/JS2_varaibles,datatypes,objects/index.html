@@ -8,7 +8,135 @@
 <body>
     <h2>Variables in JS</h2>
     
-    
+    <pre>
+        Got you — here’s a **short, clean JavaScript cheat sheet** you can skim fast 👇
+
+---
+
+## 1️⃣ Variables (rules & methods)
+
+### Ways to declare
+
+```js
+var x = 10;    // old, function-scoped, avoid
+let y = 20;    // block-scoped, can change
+const z = 30;  // block-scoped, cannot reassign
+```
+
+### Rules
+
+* `let` / `const` are **block scoped** `{ }`
+* `const` **must be initialized**
+* `const` ≠ immutable (objects/arrays can still change)
+* Use **`const` by default**, `let` when reassignment is needed
+
+---
+
+## 2️⃣ Data Types
+
+### Primitive (stored by value)
+
+```js
+Number     // 1, 2.5, NaN
+String     // "hello"
+Boolean    // true / false
+Undefined  // variable declared, no value
+Null       // intentional empty value
+BigInt     // 123n
+Symbol     // unique identifiers
+```
+
+Check type:
+
+```js
+typeof 5        // "number"
+typeof "hi"     // "string"
+typeof null     // "object" (JS bug 🤷)
+```
+
+### Non-Primitive (stored by reference)
+
+```js
+Object
+Array
+Function
+```
+
+---
+
+## 3️⃣ Objects
+
+### Create object
+
+```js
+const user = {
+  name: "Alex",
+  age: 25,
+  isAdmin: true
+};
+```
+
+### Access values
+
+```js
+user.name        // dot notation
+user["age"]      // bracket notation
+```
+
+### Add / update / delete
+
+```js
+user.city = "NY";
+user.age = 26;
+delete user.isAdmin;
+```
+
+### Object methods
+
+```js
+Object.keys(user);    // ["name", "age", "city"]
+Object.values(user); // values
+Object.entries(user);// key-value pairs
+```
+
+---
+
+## 4️⃣ Arrays (quick bonus)
+
+```js
+const arr = [1, 2, 3];
+
+arr.push(4);     // add end
+arr.pop();       // remove end
+arr.shift();     // remove start
+arr.unshift(0);  // add start
+```
+
+---
+
+## 5️⃣ Functions (very quick)
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+const add = (a, b) => a + b; // arrow
+```
+
+---
+
+## 🔑 Quick Memory Tips
+
+* `let` → **can change**
+* `const` → **cannot reassign**
+* Primitive → copied
+* Object/Array → referenced
+* `typeof null` is broken on purpose 😅
+
+If you want, I can compress this into a **one-page printable**, or do a **compare table** (`let vs const vs var`) or **interview-focused version**.
+
+    </pre>
     
     
     <script src="script.js"></script>
