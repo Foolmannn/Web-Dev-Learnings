@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting and Removing Elements using the JS</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            This is the box 
+        </div>
+        <div class="box1">
+            This is the box 
+        </div>
+        <div class="box2">
+            This is the box 
+        </div>
+        <div class="box3">
+            This is the box 
+        </div>
+    </div>
+    <div class="container1">
+        <div class="box red">
+            This is the box 
+        </div>
+        <div class="box1">
+            This is the box 
+        </div>
+        <div class="box2">
+            This is the box 
+        </div>
+        <div class="box3">
+            This is the box 
+        </div>
+    </div>
+    <script>
+        //try these in the console 
+        let div0= document.createElement("div");
+        let div1= document.createElement("div");
+        let div2= document.createElement("div");
+        let div3= document.createElement("div");
+        let div4= document.createElement("div");
+        let div5= document.createElement("div");
+        div0.innerHTML="I am inserted using the script I amd div0";
+        div1.innerHTML="I am inserted using the script  I amd div1";
+        div2.innerHTML="I am inserted using the script I amd div2";
+        div3.innerHTML="I am inserted using the script I amd div3 ";
+        div4.innerHTML="I am inserted using the script I amd div4";
+        div5.innerHTML="I am inserted using the script I amd div5";
+        div0.setAttribute("class", "created");
+        document.body.append(div0)
+        document.querySelector(".container").append(div1)
+        document.querySelector(".container").before(div2)
+        document.querySelector(".container").after(div3)
+        document.querySelector(".container").prepend(div4)
+        
+        
+        document.querySelector(".box").replaceWith(div5)
+
+        let cont =document.querySelector(".container1");
+        cont.insertAdjacentHTML("afterend", " I am inserted using the insertadajcent html ")
+        cont.insertAdjacentElement("afterbegin","p")
+
+        document.querySelector(".box").classList
+        document.querySelector(".box").className
+        document.querySelector(".box").classList.add("harry")
+        document.querySelector(".box").classList.remove("harry")
+        document.querySelector(".box").classList.add("harry")
+        document.querySelector(".box").classList.add("red")
+        document.querySelector(".box").classList.toggle("red")//changes the class effectiveness
+
+    </script>
+</body>
+</html>
