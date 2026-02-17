@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Bubbling</title>
+    <style>
+        .child{
+            background-color: gray;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .childcontainer  {
+            background-color: rgb(92, 197, 92);
+            margin: 10px;
+            padding: 14px;
+        }
+        .container{
+                 background-color: rgb(4, 107, 4);
+            margin: 10px;
+            padding: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="childcontainer">
+            <div class="child">
+                I am a child 
+            </div>
+        </section>
+
+    </div>
+    <script>
+        document.querySelector(".child").addEventListener("click",(e)=>{
+            alert("child was clicked")
+        })
+        document.querySelector(".childcontainer").addEventListener("click",(e)=>{
+             e.stopPropagation();
+            alert("childcontainer was clicked")
+        })
+        document.querySelector(".container").addEventListener("click",()=>{
+            alert("container was clicked")
+        })
+
+        // when you click on the child then the childcontainer also gets clicked and container was also clicked 
+        // It means the event gets bubbled up 
+        // So if the event listener was added to body then it will also run 
+        // so to stop this bubblind we need to stop propagation using the stoppropagation method .
+             document.querySelector(".child").addEventListener("contextmenu",(e)=>{
+            e.stopPropagation();
+            alert("child was right clicked")
+        })
+        document.querySelector(".childcontainer").addEventListener("contextmenu",()=>{
+            alert("childcontainer was right clicked")
+        })
+        document.querySelector(".container").addEventListener("contextmenu",()=>{
+            alert("container was right clicked")
+        })
+
+function getRandomColor()
+{
+    //getting random number using the formula 
+    // a + r (b-a)
+    // where a is min number r is random number and b is max number so for the number between 0 to 255 below formula is used and math.ceil gives the integer value just greater than the genrated number 
+    let val1=  Math.ceil(0 + Math.random()*255);
+   let val2= Math.ceil(0 + Math.random()*255);
+    let val3= Math.ceil(0 + Math.random()*255);
+    console.log(val1,val2,val3)
+    return `rgb(${val1} ${val2} ${val3})`
+
+}
+    //     a= setInterval(()=>{
+    //         document.querySelector(".childcontainer").style.background = getRandomColor()
+
+    // },3000)
+    // console.log(a);
+    //setinterval(function,delay)
+    // setInterval runs some code repeatedly after fixed interval
+//  to stop the setinterval 
+// use setinterval(a) 
+
+      a = setTimeout(()=>{
+            document.querySelector(".childcontainer").style.background = getRandomColor()
+
+    }, 5000);
+    console.log(a);
+    // settimeout execture the function only one time after the fixed time 
+    // use clearTimeout(a); to stop it from executing 
+
+
+    </script>
+</body>
+</html>
