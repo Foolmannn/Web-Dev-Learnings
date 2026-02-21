@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 14 of JS</title>
+    <style>
+     .dots::after {
+        content: "";
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0% { content: "."; }
+        33% { content: ".."; }
+        66% { content: "..."; }
+        100% { content: "."; }
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="message1"><span class="dots"></span></div>
+    <div class="message2"></div>
+    <div class="message3"></div>
+    <div class="message4"></div>
+    <div class="message5"></div>
+    <div class="message6"></div>
+    <!-- create a hacking simulator which has green bg and it shows these messages with random delay of 1 to 7 seconds
+
+    Initializing Hacking...... 
+    Reading your files....... 
+    Password files detected....... 
+    Sending all passwords and personal files to server...... 
+    Cleaning up .....
+
+    The three dots must blink so that it looks like a real terminal  -->
+    <script src="script.js"></script>
+</body>
+</html>
