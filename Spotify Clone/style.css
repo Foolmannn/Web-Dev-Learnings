@@ -108,6 +108,9 @@ button:hover {
 .navseparator {
     color: #b3b3b3;
 }
+.invert{
+    filter: invert(1);
+}
 /* .login{
     background-color: white;
 
@@ -137,22 +140,36 @@ button:hover {
     transform: scale(1.05);
 }
 .left{
-    background-color: white;
+    background-color: rgb(19,19,18);
     width: 25vw;
     height: 50vw;
-
+    border-radius: 8px;
+margin: 10px;
 
 }
 .right{
+    margin: 10px;
+    margin-left: 0px;
+    
+
+    border-radius: 8px;
     background-color: green;
     width: 75vw;
     height: 50vw;
+
+    background: 
+        radial-gradient(circle at top left, 
+        #2a2a2a 0%, 
+        #1a1a1a 40%, 
+        #121212 70%);
+        
+    min-height: 100vh;
+    padding: 30px;
+
 }
 
 
 
 
-.invert{
-    filter: invert(1);
-}
+
 
