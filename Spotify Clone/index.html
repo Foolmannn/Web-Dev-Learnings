@@ -1,33 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="utility.css">
-</head>
-<body>
-    <div class="container flex">
-
-        <div class="left bg-grey2 border rounded p-1">
-
-            <div class="home">
-                <div class="logo">
-                    <img class="invert" src ="logo.svg" alt="logo of spotify"> 
-                </div>
-                <ul>
-                  <li ><img class="invert" src="home.svg" alt="home icon">Home</li>
-                    <li><img class="invert" src="search.svg" alt="search icon">Search</li>
-                </ul>
-            </div>
-            <div class="library border m-1 p-1">
-Your library
-            </div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="nav-left flex bg-grey2 rounded p-1">
+          <div class="logo">
+            <img class="invert" src="logo.svg" alt="logo of spotify" />
+          </div>
+          <ul class="flex">
+            <li>
+              <button class="homebtn">
+                <img class="invert" src="home.svg" alt="home icon" />
+              </button>
+            </li>
+            <li class="flex">
+              <button class="searchbtn">
+                <img class="invert" src="search.svg" alt="search icon" />What do you want to play?
+              </button>
+            </li>
+          </ul>
         </div>
-        <div class="right border">
-            asdfasdfsdfasdf
+
+        <div class="nav-right flex">
+          <div class="navlinks">
+            <ul class="flex">
+              <li><a href="#">Premium</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Download</a></li>
+            </ul>
+          </div>
+          <div class="navseparator">|</div>
+          <div class="rightright">
+            <ul class="flex">
+              <li><a href="#">Install App</a></li>
+              <li><a href="#">Sign up</a></li>
+              <li class="login"><a href="#">Log in</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+<div class="bodycontainer flex">
+          <div class="left flex">
+Left sections        
+      </div>
+      <div class="right flex">
+        RIGHT section
+      </div>
+</div>
+
     </div>
-</body>
+  </body>
 </html>

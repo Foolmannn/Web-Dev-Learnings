@@ -1,73 +1,158 @@
-*{
-    margin: 0;padding: 0;
-    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic", sans-serif;
-font-weight: 750;
-font-size: large;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr,
+        CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
+        "Helvetica Neue", helvetica, arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 750;
+}
 
-
-body{
+/* Body */
+body {
     background-color: black;
+    color: white;
+}
+
+/* Flex utility */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 40px;
+    background-color: black;
+    position: sticky;
+    margin-top: 0;
+}
+
+/* LEFT SECTION */
+.nav-left {
+    gap: 20px;
+}
+
+/* Logo */
+.logo img {
+    height: 32px;
+    cursor: pointer;
+}
+
+/* Nav Left List */
+.nav-left ul {
+    gap: 15px;
+}
+
+/* Buttons */
+button {
+    background: #242424;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #2e2e2e;
+}
+
+/* Home button */
+.homebtn {
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Search button */
+.searchbtn {
+    width: 250px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Icons */
+.homebtn img,
+.searchbtn img {
+    width: 16px;
+}
+
+/* RIGHT SECTION */
+.nav-right {
+    gap: 25px;
+}
+
+.nav-right ul {
+    gap: 20px;
+}
+
+.nav-right a {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.nav-right a:hover {
+    color: white;
+}
+
+/* Separator */
+.navseparator {
+    color: #b3b3b3;
+}
+/* .login{
+    background-color: white;
+
+    border: none;
+    border-radius: 16px;
+    padding: 13px;
+}
+.login a{
+    color: #0f0e0e;
+      transition: 0.2s ease;
+
+}
+.nav-right .login a:hover {
+    color: #0f0e0e;
+        transform: scale(2);
+} */
+.nav-right .login a {
+    background: white;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.nav-right .login a:hover {
+    transform: scale(1.05);
 }
 .left{
-width: 25vw;
-padding: 20px;
-background-color: black;
-color: white;
+    background-color: white;
+    width: 25vw;
+    height: 50vw;
+
 
 }
 .right{
-width: 85vw;
+    background-color: green;
+    width: 75vw;
+    height: 50vw;
 }
 
 
-.home ul li{
-    display: flex;
-    gap: 15px;
-    width: 24px;
-    list-style: none;
-    padding: 10px;
-}
+
 
 .invert{
     filter: invert(1);
 }
-.bg-black{
-    background-color: black;
-    color: white;
 
-}
-.bg-black{
-    background-color: black;
-}
-.bg-grey1{
-    background-color: rgb(30,30,31);
-
-}
-.bg-grey2{
-    background-color: rgb(19,19,18);
-
-}
-.bg-grey3{
-    background-color:rgb(35,35,34);
-
-}
-.rounded{
-    border-radius: 7px;
-
-}
-.m-1{
-    margin: 10px;
-}
-.color-1{
-   color: rgb(178,178,179)
-}
-.color-2{
- color: white ;
-}
-.color-3{
-color: black;
-}
-.bg-button{
-     background-color: rgb(0, 0, 0);
-     padding: 10px;
-}
