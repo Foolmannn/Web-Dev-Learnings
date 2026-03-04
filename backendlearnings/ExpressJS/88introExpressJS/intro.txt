@@ -1,0 +1,51 @@
+Express.js Introduction
+
+**Express.js** is a minimal and flexible Node.js web application framework designed to simplify the development of server-side applications and APIs. It acts as a lightweight layer on top of Node.js, providing robust tools for handling HTTP requests, routing, middleware, and more, without obscuring the underlying Node.js features.
+
+### Key Features of Express.js
+- **Minimal and Flexible**: Offers only the essentials, allowing developers to structure their applications as they prefer.
+- **Powerful Routing System**: Enables clean and organized definition of URL patterns and HTTP methods (GET, POST, PUT, DELETE).
+- **Middleware Support**: Functions that can execute code, modify requests/responses, or end the cycle—ideal for authentication, logging, and error handling.
+- **Integration with Databases and Frontends**: Works seamlessly with databases like MongoDB, MySQL, and PostgreSQL, and supports templating engines (e.g., EJS, Pug) for dynamic HTML rendering.
+- **Built-in Error Handling**: Provides default and customizable error-handling mechanisms to improve reliability.
+
+### How Express.js Works
+1. **Server receives an HTTP request** (e.g., from a browser or app).
+2. **Request matches a defined route** based on URL and method.
+3. **Middleware functions process the request** (e.g., parsing JSON, logging).
+4. **Route handler sends a response** (e.g., HTML, JSON).
+5. **Error handling middleware** manages any errors that occur.
+
+### Getting Started
+Install Express via npm:
+```bash
+npm install express
+```
+
+Basic server example:
+```js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+```
+
+### When to Use Express.js
+- Building **RESTful APIs** or **single-page applications (SPAs)**.
+- Rapid prototyping or MVP development.
+- Projects where **flexibility and full control** over architecture are needed.
+- Full-stack JavaScript apps using **React + Express**.
+
+### Limitations
+- Lacks built-in features like authentication or validation (must be added via middleware).
+- No enforced project structure—can lead to inconsistent code if not managed.
+- May require more boilerplate for complex applications compared to opinionated frameworks.
+
+Express.js is the **de facto standard server framework for Node.js**, widely adopted due to its speed, simplicity, and vast ecosystem of plugins.
