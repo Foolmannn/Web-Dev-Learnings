@@ -7,6 +7,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+
+
+app.use(express.static('public')) // this code help to serve the static files publicly and multiple file can also be served here the public in code is the name of the folder which you want to share 
+
+// app.get or app.post or app.put or app.delete (path,handler)
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -35,8 +40,13 @@ app.get('/blog', (req, res) => {
     // this above approach is tidious as for each endpoint we need to define in hard code 
 
     // so express provides the req.params modules to add the slug( web link ) easily 
-    
+    // here slug in the code below is the variable 
     app.get('/blog/:slug', (req, res) => {
+        console.log(req) // this gives the multiple info about the request made
+
+        //for the url: http://127.0.0.1:3000/blog/mongodb?mode=dark&region=np
+        console.log(req.params) // will output: {slug : 'mongodb'}
+        console.log(req.query) // will op : {mode:dark , region: 'np' }
       res.send(`Hello This is Blog! on ${req.params.slug}`)
     })
     
