@@ -1,0 +1,165 @@
+Use the express.Router class to create modular, mountable route handlers. A Router instance is a complete middleware and routing system; for this reason, it is often referred to as a “mini-app”.
+
+The following example creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module on a path in the main app.
+
+Create a router file named birds.js in the app directory, with the following content:
+
+
+## Express.js Using `express.Router` (Mini-App Routing)
+
+In **Express**, `express.Router()` lets you create **modular route files**.
+Each router works like a **mini Express app** that can have:
+
+* middleware
+* routes
+* parameters
+
+Then you **mount it inside the main app**.
+
+This keeps your project **clean and organized**, especially when you have many routes.
+
+---
+
+# 1️⃣ Create the Router File (`birds.js`)
+
+Create a file:
+
+```
+birds.js
+```
+
+Inside it write:
+
+```javascript
+const express = require("express");
+const router = express.Router();
+
+// middleware specific to this router
+router.use((req, res, next) => {
+  console.log("Time:", Date.now());
+  next();
+});
+
+// define the home page route
+router.get("/", (req, res) => {
+  res.send("Birds home page");
+});
+
+// define the about route
+router.get("/about", (req, res) => {
+  res.send("About birds");
+});
+
+module.exports = router;
+```
+
+### What this does
+
+| Code                      | Meaning                             |
+| ------------------------- | ----------------------------------- |
+| `express.Router()`        | creates a router instance           |
+| `router.use()`            | middleware for this router          |
+| `router.get()`            | defines routes                      |
+| `module.exports = router` | exports router so app.js can use it |
+
+---
+
+# 2️⃣ Use the Router in `app.js`
+
+Now import and mount the router.
+
+```javascript
+const express = require("express");
+const app = express();
+
+const birds = require("./birds");
+
+app.use("/birds", birds);
+
+app.listen(3000);
+```
+
+---
+
+# 3️⃣ How the Routes Work
+
+Because the router is mounted on `/birds`:
+
+| URL                          | Response        |
+| ---------------------------- | --------------- |
+| `localhost:3000/birds`       | Birds home page |
+| `localhost:3000/birds/about` | About birds     |
+
+So the final path becomes:
+
+```
+app.use("/birds", birds)
+        ↓
+router.get("/")
+```
+
+= **/birds/**
+
+---
+
+# 4️⃣ Project Structure Example
+
+```
+project
+│
+├── app.js
+├── birds.js
+├── routes
+│   ├── products.js
+│   └── users.js
+```
+
+Large apps may have:
+
+```
+routes/
+controllers/
+models/
+middleware/
+```
+
+---
+
+# 5️⃣ Why Router is Important
+
+Without Router:
+
+```
+app.js → 1000+ lines
+```
+
+With Router:
+
+```
+app.js → main server
+routes/ → all endpoints separated
+```
+
+Example for an **e-commerce app like your ShopSathi project**:
+
+```
+routes/
+   products.js
+   users.js
+   orders.js
+   auth.js
+```
+
+---
+
+✅ **In simple words**
+
+`express.Router()` = a **mini Express app used to organize routes into separate files.**
+
+---
+
+💡 If you want, I can also show you:
+
+* **How professional Node.js projects structure routes (MVC pattern)**
+* **How routers connect with controllers and databases**
+* **How to build a full REST API with Express routers** (very useful for backend dev).

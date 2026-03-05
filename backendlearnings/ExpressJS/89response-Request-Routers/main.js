@@ -1,6 +1,22 @@
 const express = require("express");
+
+const blog = require('./routes/blog') // this handles the routes of the blog 
+
+const shop = require('./routes/shop')
+
+
+
+
+
+
+
+
 const app = express();
 const port = 3000;
+
+app.use('/blog', blog)
+app.use('/shop', shop)
+
 
 // to give the post reques others than default get request we need
 
