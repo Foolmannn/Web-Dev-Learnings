@@ -57,6 +57,22 @@ app
 app.get("/api", (req, res) => {
   res.json({ a: 2, b: 3, c: 4, d: 5 , name:["harry" , "suman "]});
 });
+
+// this shows the chained route handlers that are defined using app.route().
+app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
+
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
