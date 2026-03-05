@@ -1,0 +1,136 @@
+## Postman
+
+![Image](https://voyager.postman.com/illustration/response-screenshot.svg)
+
+![Image](https://assets.postman.com/postman-docs/v11/postman-request-builder-v11-35-4.jpg)
+
+![Image](https://files.readme.io/9d7af58-Screenshot_2023-03-01_at_3.43.09_PM.png)
+
+![Image](https://techzone.omnissa.com/sites/default/files/imported-images/node_5957_1119-175700/76200-1119-175655/76200-1119-175655-2.png)
+
+**Postman** is a popular tool used by developers to **test, build, and work with APIs**. It provides a graphical interface where you can send HTTP requests to a server and see the responses without writing a full frontend or backend program.
+
+---
+
+## 🔹 What Postman is Used For
+
+Postman is mainly used for **API development and testing**.
+
+Common uses include:
+
+1. **Testing APIs**
+
+   * Send requests like **GET, POST, PUT, DELETE**
+   * View responses from the server.
+
+2. **Backend Development**
+
+   * Test backend routes before connecting them to frontend.
+
+3. **Debugging APIs**
+
+   * Check if your API returns the correct data or error.
+
+4. **Working with JSON**
+
+   * View formatted JSON responses.
+
+5. **API Documentation**
+
+   * Automatically generate API documentation.
+
+6. **Automation & Testing**
+
+   * Write scripts to test APIs automatically.
+
+---
+
+## 🔹 Example: Testing an API
+
+Example API request:
+
+**GET request**
+
+```
+https://jsonplaceholder.typicode.com/posts
+```
+
+In Postman:
+
+1. Select **GET**
+2. Paste the URL
+3. Click **Send**
+
+Response example:
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "Sample post",
+    "body": "Example content"
+  }
+]
+```
+
+---
+
+## 🔹 HTTP Methods You Use in Postman
+
+| Method | Purpose          |
+| ------ | ---------------- |
+| GET    | Retrieve data    |
+| POST   | Send new data    |
+| PUT    | Update data      |
+| PATCH  | Partially update |
+| DELETE | Remove data      |
+
+Example for your **ShopSathi project**:
+
+* `GET /products` → get all products
+* `POST /products` → add product
+* `DELETE /products/5` → delete product
+
+Postman helps you **test these endpoints easily**.
+
+---
+
+## 🔹 Key Features of Postman
+
+* Request builder
+* Response viewer
+* Collections (group APIs)
+* Environment variables
+* API testing scripts
+* API documentation
+* Team collaboration
+
+---
+
+## 🔹 Why Developers Use Postman
+
+Without Postman:
+
+* You must create a frontend page to test APIs.
+
+With Postman:
+
+* You can **test APIs directly** without frontend.
+
+---
+
+✅ Since you are building the **ShopSathi e-commerce project**, Postman is useful to test things like:
+
+* login API
+* product upload API
+* user authentication
+* cart APIs
+
+---
+
+💡 If you want, I can also show:
+
+* **How to use Postman with PHP + MySQL APIs**
+* **How to test login/register API with Postman**
+* **Beginner workflow developers use with Postman**.
