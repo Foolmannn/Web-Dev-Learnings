@@ -1,0 +1,192 @@
+https://expressjs.com/en/guide/writing-middleware.html
+
+https://expressjs.com/en/guide/using-middleware.html
+
+
+
+In **Express.js**, **middleware** is a function that runs **between the request and the response**. It has access to the **request (`req`)**, **response (`res`)**, and the **next function (`next`)** in the application’s request-response cycle.
+
+In simple words:
+➡️ Middleware **processes a request before sending the response**.
+
+---
+
+## Basic Syntax of Middleware
+
+```javascript
+function middlewareName(req, res, next) {
+    // code here
+    next(); // passes control to the next middleware
+}
+```
+
+* **req** → request object
+* **res** → response object
+* **next()** → passes control to the next middleware
+
+If `next()` is not called, the request will **stop there**.
+
+---
+
+## Example 1: Simple Middleware
+
+```javascript
+const express = require("express");
+const app = express();
+
+function logger(req, res, next) {
+    console.log("Request received:", req.method, req.url);
+    next();
+}
+
+app.use(logger);
+
+app.get("/", (req, res) => {
+    res.send("Home Page");
+});
+
+app.listen(3000);
+```
+
+When a user visits `/`, the console will show:
+
+```
+Request received: GET /
+```
+
+---
+
+## Example 2: Route Specific Middleware
+
+Middleware can also be used **only for specific routes**.
+
+```javascript
+function checkLogin(req, res, next) {
+    let loggedIn = true;
+
+    if (loggedIn) {
+        next();
+    } else {
+        res.send("Please login first");
+    }
+}
+
+app.get("/dashboard", checkLogin, (req, res) => {
+    res.send("Welcome to dashboard");
+});
+```
+
+Here:
+
+* `checkLogin` runs **before** the dashboard route.
+* If the user is not logged in, access is blocked.
+
+---
+
+## Example 3: Built-in Middleware
+
+Express already provides some middleware.
+
+### JSON parser
+
+```javascript
+app.use(express.json());
+```
+
+### Static files
+
+```javascript
+app.use(express.static("public"));
+```
+
+---
+
+## Types of Middleware in Express
+
+1. **Application-level middleware**
+
+```javascript
+app.use((req,res,next)=>{
+    console.log("App middleware");
+    next();
+});
+```
+
+2. **Router-level middleware**
+
+```javascript
+const router = express.Router();
+router.use((req,res,next)=>{
+    console.log("Router middleware");
+    next();
+});
+```
+
+3. **Built-in middleware**
+
+* `express.json()`
+* `express.static()`
+
+4. **Third-party middleware**
+   Examples:
+
+* `cors`
+* `body-parser`
+* `morgan`
+
+---
+
+## Example Flow
+
+Request flow:
+
+```
+Client Request
+      ↓
+Middleware 1
+      ↓
+Middleware 2
+      ↓
+Route Handler
+      ↓
+Response to Client
+```
+
+---
+
+## Practical Example (Used in APIs)
+
+Common middleware uses:
+
+* **Authentication**
+* **Logging**
+* **Error handling**
+* **Parsing JSON**
+* **Validation**
+
+Example authentication middleware:
+
+```javascript
+function auth(req,res,next){
+    if(req.headers.token === "12345"){
+        next();
+    }else{
+        res.status(401).send("Unauthorized");
+    }
+}
+```
+
+---
+
+💡 **Important concept:**
+Express works like a **pipeline** where middleware functions run one after another.
+
+---
+
+If you want, I can also explain:
+
+* **`express.Router()` (mini-app concept)**
+* **Error handling middleware**
+* **How middleware works internally in Express**
+
+These are usually the **next concepts after learning middleware.**
