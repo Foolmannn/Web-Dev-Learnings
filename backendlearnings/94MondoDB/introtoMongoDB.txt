@@ -1,0 +1,416 @@
+## MongoDB Basics (Detailed Beginner Guide)
+
+### 1️⃣ What is MongoDB?
+
+**MongoDB** is a **NoSQL database** that stores data in **JSON-like documents** instead of tables like traditional SQL databases.
+
+* SQL DB → Tables → Rows → Columns
+* MongoDB → **Collections → Documents → Fields**
+
+MongoDB stores data in **BSON (Binary JSON)** internally.
+
+Example document:
+
+```json
+{
+  "name": "Suman",
+  "age": 22,
+  "skills": ["HTML", "CSS", "JavaScript"]
+}
+```
+
+---
+
+# 2️⃣ MongoDB Structure
+
+### Database → Collection → Document → Fields
+
+Example for an **e-commerce project like your ShopSathi**.
+
+Database:
+
+```
+shopsathi
+```
+
+Collection:
+
+```
+products
+```
+
+Document:
+
+```json
+{
+  "name": "Laptop",
+  "price": 1200,
+  "category": "Electronics",
+  "stock": 5
+}
+```
+
+Fields:
+
+```
+name
+price
+category
+stock
+```
+
+Hierarchy:
+
+```
+MongoDB Server
+   │
+   ├── Database
+   │      │
+   │      ├── Collection
+   │      │      │
+   │      │      ├── Document
+   │      │      │      │
+   │      │      │      ├── Field
+```
+
+---
+
+# 3️⃣ Installing MongoDB
+
+### Windows Steps
+
+1. Download MongoDB Community Server
+2. Install with **MongoDB Compass**
+3. Start MongoDB service
+
+Then open terminal:
+
+```bash
+mongosh
+```
+
+---
+
+# 4️⃣ Basic MongoDB Commands
+
+### Show databases
+
+```bash
+show dbs
+```
+
+### Create / use database
+
+```bash
+use shopsathi
+```
+
+MongoDB creates database **only when data is inserted**.
+
+---
+
+# 5️⃣ Creating Collections
+
+Collection is like a **table**.
+
+```bash
+db.createCollection("products")
+```
+
+Show collections:
+
+```bash
+show collections
+```
+
+---
+
+# 6️⃣ Insert Data
+
+### Insert one document
+
+```bash
+db.products.insertOne({
+  name: "Keyboard",
+  price: 3000,
+  brand: "Redragon"
+})
+```
+
+### Insert multiple documents
+
+```bash
+db.products.insertMany([
+  {name: "Mouse", price: 1200},
+  {name: "Monitor", price: 20000}
+])
+```
+
+---
+
+# 7️⃣ Reading Data (Queries)
+
+### Get all documents
+
+```bash
+db.products.find()
+```
+
+Pretty format:
+
+```bash
+db.products.find().pretty()
+```
+
+---
+
+### Find specific document
+
+```bash
+db.products.find({name: "Mouse"})
+```
+
+---
+
+### Find with condition
+
+```bash
+db.products.find({price: {$gt: 1000}})
+```
+
+Operators:
+
+| Operator | Meaning            |
+| -------- | ------------------ |
+| `$gt`    | greater than       |
+| `$lt`    | less than          |
+| `$gte`   | greater than equal |
+| `$lte`   | less than equal    |
+| `$ne`    | not equal          |
+| `$in`    | value inside array |
+
+Example:
+
+```bash
+db.products.find({price: {$gte: 1000}})
+```
+
+---
+
+# 8️⃣ Updating Data
+
+### Update one document
+
+```bash
+db.products.updateOne(
+  {name: "Mouse"},
+  {$set: {price: 1500}}
+)
+```
+
+---
+
+### Update many
+
+```bash
+db.products.updateMany(
+  {brand: "Redragon"},
+  {$set: {stock: 10}}
+)
+```
+
+---
+
+# 9️⃣ Deleting Data
+
+### Delete one
+
+```bash
+db.products.deleteOne({name: "Mouse"})
+```
+
+### Delete many
+
+```bash
+db.products.deleteMany({price: {$lt: 1000}})
+```
+
+---
+
+# 🔟 MongoDB Document ID
+
+Every document automatically gets an **_id field**.
+
+Example:
+
+```json
+{
+  "_id": ObjectId("65fa9b5f8c1a7a9f3e"),
+  "name": "Keyboard",
+  "price": 3000
+}
+```
+
+This is the **primary key**.
+
+---
+
+# 11️⃣ MongoDB Data Types
+
+Common types:
+
+| Type     | Example              |
+| -------- | -------------------- |
+| String   | `"Suman"`            |
+| Number   | `22`                 |
+| Boolean  | `true`               |
+| Array    | `["HTML","CSS"]`     |
+| Object   | `{city:"Kathmandu"}` |
+| Date     | `new Date()`         |
+| ObjectId | `_id`                |
+
+Example:
+
+```json
+{
+  "name": "Suman",
+  "age": 22,
+  "skills": ["JS", "Node"],
+  "address": {
+    "city": "Kathmandu"
+  }
+}
+```
+
+---
+
+# 12️⃣ Sorting Data
+
+Ascending:
+
+```bash
+db.products.find().sort({price: 1})
+```
+
+Descending:
+
+```bash
+db.products.find().sort({price: -1})
+```
+
+---
+
+# 13️⃣ Limiting Data
+
+Limit results:
+
+```bash
+db.products.find().limit(5)
+```
+
+Skip:
+
+```bash
+db.products.find().skip(5)
+```
+
+Useful for **pagination**.
+
+---
+
+# 14️⃣ Indexing (Performance)
+
+Indexes speed up search queries.
+
+Example:
+
+```bash
+db.products.createIndex({name: 1})
+```
+
+---
+
+# 15️⃣ MongoDB with Node.js (Important for Express)
+
+Install MongoDB driver:
+
+```bash
+npm install mongodb
+```
+
+Example connection:
+
+```js
+import { MongoClient } from "mongodb";
+
+const url = "mongodb://127.0.0.1:27017";
+const client = new MongoClient(url);
+
+async function main() {
+  await client.connect();
+
+  const db = client.db("shopsathi");
+  const collection = db.collection("products");
+
+  const data = await collection.find().toArray();
+  console.log(data);
+}
+
+main();
+```
+
+---
+
+# 16️⃣ MongoDB vs SQL
+
+| SQL             | MongoDB            |
+| --------------- | ------------------ |
+| Tables          | Collections        |
+| Rows            | Documents          |
+| Columns         | Fields             |
+| Fixed schema    | Flexible schema    |
+| JOIN operations | Embedded documents |
+
+---
+
+# Example for your **ShopSathi Project**
+
+Product document:
+
+```json
+{
+  "name": "Mechanical Keyboard",
+  "price": 4500,
+  "seller": "Suman",
+  "category": "Accessories",
+  "stock": 20
+}
+```
+
+Collection:
+
+```
+products
+```
+
+Database:
+
+```
+shopsathi
+```
+
+---
+
+# Next Important MongoDB Topics (Very Important for You)
+
+After basics, learn:
+
+1️⃣ **MongoDB with Express**
+2️⃣ **Mongoose (most used ODM)**
+3️⃣ **Schema & Models**
+4️⃣ **CRUD APIs**
+5️⃣ **Aggregation pipeline**
+6️⃣ **Relationships (populate)**
+
+---
+
