@@ -1,0 +1,5 @@
+https://www.mongodb.com/docs/
+
+we can download the mongodb compass and use it to creat the db and documents 
+
+and vs code extenstion can be use to view and edit the documents
