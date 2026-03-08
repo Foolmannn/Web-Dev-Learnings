@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose';
 import express from 'express';
-import { Todo } from "./models/Todo.js";
+import {Todo} from "./models/Todo.js";
 
 let conn = await mongoose.connect("mongodb://localhost:27017/todo")
 
