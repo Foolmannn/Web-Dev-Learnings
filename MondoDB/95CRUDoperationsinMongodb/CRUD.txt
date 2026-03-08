@@ -1,0 +1,172 @@
+https://www.mongodb.com/docs/
+
+
+**CRUD operations in MongoDB** are the four basic database actions used to manage data:
+
+* **C** → Create (insert data)
+* **R** → Read (retrieve data)
+* **U** → Update (modify data)
+* **D** → Delete (remove data)
+
+MongoDB stores data in **collections** (similar to tables) and **documents** (similar to rows) using **JSON-like format (BSON)**.
+
+---
+
+# 1️⃣ CREATE (Insert Data)
+
+Used to add documents to a collection.
+
+### Insert One Document
+
+```javascript
+db.users.insertOne({
+  name: "Suman",
+  age: 22,
+  country: "Nepal"
+})
+```
+
+### Insert Multiple Documents
+
+```javascript
+db.users.insertMany([
+  { name: "Ram", age: 25 },
+  { name: "Hari", age: 30 }
+])
+```
+
+After insertion MongoDB automatically creates an **_id**.
+
+Example stored document:
+
+```json
+{
+  "_id": ObjectId("64abc123"),
+  "name": "Suman",
+  "age": 22,
+  "country": "Nepal"
+}
+```
+
+---
+
+# 2️⃣ READ (Retrieve Data)
+
+### Find All Documents
+
+```javascript
+db.users.find()
+```
+
+### Find One Document
+
+```javascript
+db.users.findOne({ name: "Suman" })
+```
+
+### Find with Condition
+
+```javascript
+db.users.find({ age: { $gt: 24 } })
+```
+
+Meaning: find users with **age greater than 24**
+
+---
+
+# 3️⃣ UPDATE (Modify Data)
+
+### Update One Document
+
+```javascript
+db.users.updateOne(
+  { name: "Suman" },
+  { $set: { age: 23 } }
+)
+```
+
+### Update Multiple Documents
+
+```javascript
+db.users.updateMany(
+  { country: "Nepal" },
+  { $set: { status: "active" } }
+)
+```
+
+### Increase Value
+
+```javascript
+db.users.updateOne(
+  { name: "Suman" },
+  { $inc: { age: 1 } }
+)
+```
+
+---
+
+# 4️⃣ DELETE (Remove Data)
+
+### Delete One Document
+
+```javascript
+db.users.deleteOne({ name: "Suman" })
+```
+
+### Delete Multiple Documents
+
+```javascript
+db.users.deleteMany({ age: { $lt: 20 } })
+```
+
+### Delete All Documents
+
+```javascript
+db.users.deleteMany({})
+```
+
+---
+
+# Example Full CRUD Flow
+
+```javascript
+// CREATE
+db.products.insertOne({ name: "Laptop", price: 800 })
+
+// READ
+db.products.find()
+
+// UPDATE
+db.products.updateOne(
+  { name: "Laptop" },
+  { $set: { price: 750 } }
+)
+
+// DELETE
+db.products.deleteOne({ name: "Laptop" })
+```
+
+---
+
+💡 **Tip (for your Express + MongoDB learning):**
+CRUD operations are usually used with **REST APIs** like this:
+
+| HTTP Method | Operation | MongoDB   |
+| ----------- | --------- | --------- |
+| POST        | Create    | insertOne |
+| GET         | Read      | find      |
+| PUT/PATCH   | Update    | updateOne |
+| DELETE      | Delete    | deleteOne |
+
+Example route in Express:
+
+```javascript
+app.get("/users", async (req, res) => {
+  const users = await db.collection("users").find().toArray();
+  res.json(users);
+});
+```
+
+---
+
+If you want, I can also show you **MongoDB CRUD with Express.js + Mongoose (real backend example)** which is probably what you're learning for your **ShopSathi project**.
