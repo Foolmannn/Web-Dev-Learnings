@@ -19,7 +19,7 @@ function generateEmployees() {
 
   let employees = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     employees.push({
       name: getRandom(names),
       salary: getRandom(salaries),
@@ -33,6 +33,10 @@ function generateEmployees() {
 }
 
 app.post("/generate", async (req, res) => {
+  // Clear the collection before insertion 
+   await Employee.deleteMany({});
+
+
   const employees = generateEmployees();
 
   await Employee.insertMany(employees);
