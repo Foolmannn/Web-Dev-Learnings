@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Data</title>
+</head>
+<body>
+
+<h2>Generate Random Employees</h2>
+
+<button onclick="generateData()">Generate & Insert Data</button>
+
+<p id="status"></p>
+
+<script>
+async function generateData() {
+  const res = await fetch("/generate", {
+    method: "POST"
+  });
+
+  const data = await res.json();
+
+  document.getElementById("status").innerText = data.message;
+}
+</script>
+
+</body>
+</html>
