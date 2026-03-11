@@ -13,15 +13,16 @@ Design layout.png using node.js and tailwind css
 </head>
 <body>
     <!-- Hello from home page   -->
-    <div class="flex max-w-full container m-4 p-4  bg-[#212121]  ">
+  <div class="flex flex-col md:flex-row max-w-full container m-4 p-4 bg-[#212121]"> 
+    <!-- Made responsive -->
         <div class=" flex card">
-            <div class="img relative p-4 ">
-                <img  src="thumbnail.jpg" class="w-124 object-cover rounded-xl " alt="">
-                <div class="absolute bottom-6 right-5  timespan text-white bg-[#212121]  py-1 px-3 font-bold inline text-xl  rounded">31:20</div>
+            <div class="img relative p-2 ">
+        <img src="thumbnail.jpg" class="w-full md:w-64 lg:w-72 object-cover rounded-xl" alt="">
+                <div class="absolute bottom-6 right-5  timespan text-white bg-[#212121]/70 py-0.5 px-2  font-bold inline text-xl rounded">31:20</div>
             </div>
             <div class="right font-sans font-semibold  text-white ">
                 <div class="title  text-3xl  inline ">Introduction To the Python course in Hindi | Python Course - Tutorial #1 </div>
-                <div class="below text-xl ">
+                <div class="below py-3 text-xl ">
                     <span class="channelname">CodeWithHarry .</span>
                     <span class="views">931K views .</span>
                     <span class="time">3 months ago .</span>
