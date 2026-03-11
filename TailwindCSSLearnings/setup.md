@@ -39,7 +39,7 @@ npm install tailwindcss @tailwindcss/postcss postcss
 ```
 
 
-3️⃣ Install Tailwind CSS CLI (important)
+ # 3️⃣ Install Tailwind CSS CLI (important)
 
 Install Tailwind and the CLI plugin:
 
