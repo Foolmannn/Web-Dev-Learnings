@@ -13,7 +13,8 @@ function App() {
       {/* as class is reserved OOP of the js so className isused in react as react app uses the js to parse the html like looking code which we are currently using   */}
       {/* In this return html code the js is parsed using the { } ie everthing inside the { } is parsed as the js values or variables  */}
 
-      <Navbar/> 
+      <Navbar logoText={"FoolMann"}/> 
+      {/* this is how you include components and pass the props */}
       {/* <navbar/> ::::: Your problem happens because React components must start with a capital letter. Right now you imported and used navbar in lowercase, so React treats it like a normal HTML tag, not a component. */}
       <div className="value">{value}</div>
       <button
@@ -24,7 +25,7 @@ function App() {
         Click Me
       </button>
       {/* <h1>Hello </h1> */}
-      <Footer/>
+      <Footer contactNo={9874523475}/>
     </div>
   );
 }

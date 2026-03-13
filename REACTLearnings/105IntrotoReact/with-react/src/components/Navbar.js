@@ -3,9 +3,11 @@
     
     import React from 'react'
     
-    const Navbar = () => {
+    const Navbar = (props) => {
       return (
         <div>
+          <div className="logo">{props.logoText}</div> 
+          {/* props are the variable passed in components  */}
           <ul>
             <li>Home</li>
             <li>About</li>

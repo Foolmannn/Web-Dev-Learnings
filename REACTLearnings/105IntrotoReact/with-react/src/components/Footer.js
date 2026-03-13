@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div>
       I am a footer
+      <div className="contactNo">{props.contactNo}</div>
     </div>
+    
   )
 }
 
