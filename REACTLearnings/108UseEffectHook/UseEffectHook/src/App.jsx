@@ -12,23 +12,20 @@ function App() {
   const [first, setfirst] = useState(0);
   const [color, setcolor] = useState(0);
 
-  useEffect(() => {
-    alert("Hey welcome to this page ");
-  }, []); // useEffect is the react hook . it runs the function and takes the array which is the trigger point ie when the array is changed it trigger the useeffect 
-  // here [] empty array means on every reload it runs 
-  useEffect(() => {
-    alert("Count was changed ");
-    setcolor(color+1);
-  }, [count]); // this triggers when the count is changed
 
-  useEffect(() => {
-    alert("first was changed ");
-  }, [first]);
+      useEffect(() => {
+        alert("Count was changed ");
+        setcolor(color+1);
+      }, [count]);
+  
 
   return (
     <>
 
-    <Navbar color={"Navy" +" "+ "cyan" + color}/>
+    <Navbar color={"Navy" +" "+ "cyan" + color}/> 
+    {/* here commenting out the navbar component then the cleanup code will run it is generally done using the some logic conditionally  */}
+
+
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
