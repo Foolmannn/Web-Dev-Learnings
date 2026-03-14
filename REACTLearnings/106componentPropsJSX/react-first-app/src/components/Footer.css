@@ -1,0 +1,8 @@
+.footer{
+    background-color: gray;
+    width: 100vw;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}

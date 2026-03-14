@@ -1,0 +1,13 @@
+/* This is the global css called css  resat   which applies to all the pages */
+
+*{
+  margin: 0;
+  padding: 0;
+
+}
+/* .hero{
+  height: 2000px;
+} */
+ .cards{
+  display: flex;
+ }

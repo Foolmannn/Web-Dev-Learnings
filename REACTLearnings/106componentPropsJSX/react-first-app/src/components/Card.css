@@ -1,0 +1,7 @@
+.card{
+    width: 30vw;
+    height: 30vw;
+    border: 2px solid black;
+    background-color: azure;
+    margin: 10px;
+}
