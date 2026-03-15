@@ -8,12 +8,12 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-const btnref= useRef();
+const btnref= useRef(); //when ref changes the content doesnot rerender 
 
 useEffect(() => {
 console.log("First rendering....")
 btnref.current.style.backgroundColor = "red";
-}, [])
+}, []) 
 
 
   
@@ -125,6 +125,7 @@ btnref.current.style.backgroundColor = "red";
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <button onClick={()=>{btnref.current.style.display= "none"}}>Change Me</button>
     </>
   )
 }
