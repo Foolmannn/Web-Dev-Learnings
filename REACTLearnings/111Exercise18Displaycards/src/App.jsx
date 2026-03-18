@@ -11,6 +11,7 @@ function App() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setUsers(data); // 3. Update state with the fetched JSON
         setLoading(false);
       })
@@ -18,18 +19,29 @@ function App() {
   }, []); // The empty array [] means "run this once on mount"
 
   return (
-    <div className="container">
-      <h1>User List</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <>
+   
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="card-container">
+            {users.map(
+              (user) => (
+                <div key={user.id} className="card">
+                  <div className="name">Name: {user.name}</div>
+                  <div>User ID: {user.id}</div>
+                  <div>{user.email}</div>
+                  {/* <div>{user.address}</div>  this doesnot work as address is the object not string */}
+                  <div>
+                    {user.address.street} ,{user.address.city}
+                  </div>
+                </div>
+              )
+
+            )}
+          </div>
+        )}
+    </>
   );
 }
 
