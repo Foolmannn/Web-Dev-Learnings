@@ -11,7 +11,7 @@ function App() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
-        setUsers(data);    // 3. Update state with the fetched JSON
+        setUsers(data); // 3. Update state with the fetched JSON
         setLoading(false);
       })
       .catch((error) => console.error("Error fetching users:", error));
@@ -20,7 +20,9 @@ function App() {
   return (
     <div className="container">
       <h1>User List</h1>
-      {loading ? <p>Loading...</p> : (
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
         <ul>
           {users.map((user) => (
             <li key={user.id}>{user.name}</li>

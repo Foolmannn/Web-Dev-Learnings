@@ -1,10 +1,8 @@
-Nice—that’s a great move. Using WSL (Windows Subsystem for Linux) is one of the best ways to learn Linux practically.
 
-I’ll give you a **clear beginner-friendly roadmap + essential commands** so you can actually use it daily 👇
 
 ---
 
-# 🐧 1. What is Linux (quick idea)
+#  1. What is Linux (quick idea)
 
 * Linux is an **operating system kernel**
 * Used in:
@@ -16,7 +14,7 @@ I’ll give you a **clear beginner-friendly roadmap + essential commands** so yo
 
 ---
 
-# 📂 2. Basic Linux Concepts
+#  2. Basic Linux Concepts
 
 ### 📁 File System
 
@@ -25,7 +23,7 @@ I’ll give you a **clear beginner-friendly roadmap + essential commands** so yo
 * `/etc` → config files
 * `/bin` → system commands
 
-### 📍 Current Directory
+###  Current Directory
 
 * Always know where you are:
 
@@ -35,7 +33,7 @@ pwd
 
 ---
 
-# 📜 3. Navigation Commands
+#  3. Navigation Commands
 
 ### 📂 List files
 
@@ -56,7 +54,7 @@ cd /         # root directory
 
 ---
 
-# 📄 4. File & Folder Management
+#  4. File & Folder Management
 
 ### 📁 Create folder
 
@@ -64,27 +62,27 @@ cd /         # root directory
 mkdir myfolder
 ```
 
-### 📄 Create file
+###  Create file
 
 ```bash
 touch file.txt
 ```
 
-### ❌ Delete
+###  Delete
 
 ```bash
 rm file.txt
 rm -r foldername   # delete folder
 ```
 
-### 📋 Copy
+###  Copy
 
 ```bash
 cp file.txt copy.txt
 cp -r folder1 folder2
 ```
 
-### 🔁 Move / Rename
+###  Move / Rename
 
 ```bash
 mv file.txt newname.txt
@@ -93,7 +91,7 @@ mv file.txt folder/
 
 ---
 
-# 👀 5. Viewing Files
+#  5. Viewing Files
 
 ```bash
 cat file.txt       # show content
@@ -104,7 +102,7 @@ tail file.txt      # last lines
 
 ---
 
-# 🔍 6. Search
+#  6. Search
 
 ### Find file
 
@@ -120,7 +118,7 @@ grep "word" file.txt
 
 ---
 
-# ⚙️ 7. Permissions (IMPORTANT)
+#  7. Permissions (IMPORTANT)
 
 Linux has 3 permissions:
 
@@ -142,7 +140,7 @@ chmod +x file.sh
 
 ---
 
-# 👤 8. Package Management (Ubuntu in WSL)
+#  8. Package Management (Ubuntu in WSL)
 
 Most WSL setups use Ubuntu.
 
@@ -161,7 +159,7 @@ sudo apt install git
 
 ---
 
-# 🔥 9. Useful Everyday Commands
+#  9. Useful Everyday Commands
 
 ### Clear terminal
 
@@ -184,7 +182,7 @@ top
 
 ---
 
-# 🧠 10. Pro Tips (VERY useful)
+#  10. Pro Tips (VERY useful)
 
 ### ✅ Auto-complete
 
@@ -202,7 +200,7 @@ mkdir test && cd test
 
 ---
 
-# 🧪 11. Simple Practice (do this now)
+#  11. Simple Practice (do this now)
 
 Try this in WSL:
 
@@ -216,7 +214,7 @@ cat file1.txt
 
 ---
 
-# 🚀 12. Why this matters (for you)
+#  12. Why this matters (for you)
 
 Since you're doing:
 
@@ -237,7 +235,7 @@ Good question—this is one of the most important things when using WSL 👍
 
 ---
 
-# 🪟➡️🐧 Access Windows Files from WSL
+#  Access Windows Files from WSL
 
 In WSL, your Windows drives are mounted inside `/mnt`
 
@@ -270,11 +268,11 @@ Example (your Windows username matters):
 cd /mnt/c/Users/YourUsername/Desktop
 ```
 
-👉 Replace `YourUsername` with your actual Windows username
+ Replace `YourUsername` with your actual Windows username
 
 ---
 
-# 🧪 Example
+#  Example
 
 ```bash
 cd /mnt/c/Users/Suman/Desktop
@@ -285,7 +283,7 @@ You’ll see all your Desktop files inside WSL
 
 ---
 
-# 📄 3. Work with Windows files
+#  3. Work with Windows files
 
 You can do everything:
 
@@ -309,7 +307,7 @@ cp file.txt /home/your-linux-user/
 
 ---
 
-# 🔁 4. Copy between Windows ↔ WSL
+#  4. Copy between Windows ↔ WSL
 
 ### From Windows → WSL
 
@@ -325,7 +323,7 @@ cp file.txt /mnt/c/Users/Suman/Desktop/
 
 ---
 
-# 🚀 5. Open Windows folder in VS Code
+#  5. Open Windows folder in VS Code
 
 If you have VS Code installed:
 
@@ -342,7 +340,7 @@ code .
 
 ---
 
-# 🔥 6. Open current WSL folder in Windows Explorer
+#  6. Open current WSL folder in Windows Explorer
 
 ```bash
 explorer.exe .
@@ -352,7 +350,7 @@ This opens the current Linux folder in Windows File Explorer 🤯
 
 ---
 
-# ⚠️ Important Tips (VERY IMPORTANT)
+#  Important Tips (VERY IMPORTANT)
 
 ### ❗ 1. Performance tip
 
@@ -364,7 +362,7 @@ This opens the current Linux folder in Windows File Explorer 🤯
 
 instead of `/mnt/c`
 
-👉 Why?
+ Why?
 
 * Faster performance
 * Fewer bugs with Node, npm, etc.
@@ -378,7 +376,7 @@ Sometimes files behave weirdly—this is normal in WSL
 
 ---
 
-# 🧠 Pro workflow (best practice)
+#  Pro workflow (best practice)
 
 👉 Do this:
 
@@ -396,7 +394,7 @@ Sometimes files behave weirdly—this is normal in WSL
 
 ---
 
-# 🧪 Quick Practice
+#  Quick Practice
 
 Try this:
 
