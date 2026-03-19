@@ -3,6 +3,27 @@
 @theme {
   /* Brand */
   --color-primary: #6366f1;
+  --color-primary-dark: #393ce9;
+  /* Backgrounds */
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+
+  /* Text */
+  --color-text: #111827;
+  --color-muted: #6b7280;
+
+  /* Borders */
+  --color-border: #e5e7eb;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+}
+:root {
+  /* Brand */
+  --color-primary: #6366f1;
+  --color-primary-dark: #393ce9;
 
   /* Backgrounds */
   --color-bg: #f9fafb;
