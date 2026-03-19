@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 /* The 'inline' keyword is critical for dynamic React updates */
-@theme inline {
+/* @theme inline {
   --color-brand: var(--brand-color);
-}
+} */
 
 /* Set a default fallback value */
-:root {
-  --brand-color: #3b82f6; /* Blue */
+
+@theme {
+  --color-primary: 99 102 241;
+  --color-bg: 249 250 251;
+  --color-text: 17 24 39;
 }
