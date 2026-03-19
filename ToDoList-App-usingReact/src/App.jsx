@@ -10,10 +10,10 @@ export default function App() {
   return (
     <>
     <Navbar/>
-<div className="hello bg-primary p-4  ">
+<div className="hello bg-success  p-4  ">
   Tailwind Working 
 </div>
-    <div className="bg-[rgb(var(--color-primary))] text-white p-4">
+    <div className="bg text-white p-4">
       Working Test
     </div>
     </>
