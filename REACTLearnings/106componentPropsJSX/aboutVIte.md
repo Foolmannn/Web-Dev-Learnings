@@ -1,4 +1,4 @@
-## ⚡ Introduction to Vite
+# ⚡ Introduction to Vite
 
 **Vite** (pronounced **“veet”**, French for *quick*) is a **modern frontend build tool** used to develop web applications faster. It is mainly used with frameworks like **React**, **Vue.js**, and **Svelte**, but it also works with plain HTML, CSS, and JavaScript.
 
