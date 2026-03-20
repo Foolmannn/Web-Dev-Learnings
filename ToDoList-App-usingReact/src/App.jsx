@@ -1,13 +1,25 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import "./index.css";
 
 export default function App() {
 
+  
   const [todo,settodo]= useState("")
-  const [todos,settodos]= useState([])
+  // const [todos,settodos]= useState([])
+  const [todos, settodos] = useState(() => {
+    let saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+    useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+
   const handleEdit=()=>{
 
   }
@@ -64,7 +76,7 @@ export default function App() {
 
             return <div className="todo py-2 flex gap-10 w-2/4 justify-between " key={items.todo}>
 
-<input onChange={handleCheckbox} type="checkbox" className="w-6 " value={items.isCompleted} id={items.id} />
+<input checked={items.isCompleted} onChange={handleCheckbox} type="checkbox" className="w-6 " value={items.isCompleted} id={items.id} />
             
             
             
