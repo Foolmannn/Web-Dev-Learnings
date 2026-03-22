@@ -1,13 +1,14 @@
 import { useState } from "react";
 // import { useForm, SubmitHandler } from "react-hook-form";
 // submitHandler works on the typescript only 
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 
 function App() {
   const {
     register,
     handleSubmit,
     watch,
+    setError,
     formState: { errors ,isSubmitting},
   } = useForm()
 
@@ -24,9 +25,14 @@ function App() {
 
   // function to do actin when the submit is clicked here we are just showing the data on the log
   const onSubmit = async (data) =>{ 
-    await delay(4); // adding delay 
+    await delay(2); // adding delay 
     console.log(data)
-  
+  if(data.username!=="Suman"){
+    setError("myform",{message:"Your credentials are not valid"})
+  }
+  if(data.username == "Subham"){
+    setError("blocked",{message: "Sorry ! this user is blocked"})
+  }
   
   }
   return (
@@ -50,6 +56,9 @@ function App() {
           <br />
           <input disabled={isSubmitting} type="submit" value="Submit" /> 
           {/* using the issubmitting value from the library to disable the submit when the data is being submitted  */}
+
+               {errors.myform && <span>{errors.myform.message}</span>}
+               {errors.blocked && <span>{errors.blocked.message}</span>}
         </form>
       </div>
     </>
