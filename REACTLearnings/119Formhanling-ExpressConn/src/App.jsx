@@ -8,13 +8,31 @@ function App() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors ,isSubmitting},
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const delay = (d) => {
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve()
+      },d*1000);
 
+    })
+  }
+  //This simulates the network delay . As is reallife we need to account for the delay as the user shouldnot give the multiple submits 
+
+
+  // function to do actin when the submit is clicked here we are just showing the data on the log
+  const onSubmit = async (data) =>{ 
+    await delay(4); // adding delay 
+    console.log(data)
+  
+  
+  }
   return (
     <>
+    {isSubmitting && <div>Loading....</div>} 
+    {/* Message when the isSubmitting is true  */}
       <div className="container">
         <form  onSubmit={handleSubmit(onSubmit)}>
           {/* <input type="text" name="username"/> */}
@@ -30,7 +48,8 @@ function App() {
           {errors.password && <span>{errors.password.message}</span>}
           {/* This is how we give the custom message for each kind of issue */}
           <br />
-          <input type="submit" value="Submit" />
+          <input disabled={isSubmitting} type="submit" value="Submit" /> 
+          {/* using the issubmitting value from the library to disable the submit when the data is being submitted  */}
         </form>
       </div>
     </>
