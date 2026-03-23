@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 import Navbar from "./components/Navbar";
 import "./index.css";
@@ -154,14 +156,14 @@ export default function App() {
                       className="edit font-bold  bg-primary-dark  py-1  px-3 rounded-md hover:bg-primary  cursor-pointer  text-white "
                       id={items.id}
                     >
-                      Edit
+                      <FaEdit />
                     </button>
                     <button
                       onClick={handleDelete}
                       className="delete font-bold  bg-primary-dark py-1  px-3 rounded-md hover:bg-primary cursor-pointer  text-white "
                       id={items.id}
                     >
-                      Delete
+                      <MdDelete />
                     </button>
                   </div>
                 </div>
