@@ -1,19 +1,49 @@
-import React from 'react'
+// import React from 'react'
 
-const Navbar = () => {
+// const Navbar = () => {
+//   return (
+//     <div className='nav flex bg-primary justify-between p-5 font-bold ' >
+//     <div className="logo">
+//       <span className='font-bold text-3xl mx-8 mt-8 '>PlanWhatYouDo</span>
+//     </div>
+//     <ul className="flex list-none gap-12 mx-10 text-2xl   ">
+      
+//         <li className='cursor-pointer hover:font-extrabold transition-all duration-75 '>Home</li>
+//         <li className='cursor-pointer hover:font-extrabold transition-all duration-75 '>Tasks</li>
+
+      
+//     </ul>
+//     </div>
+//   )
+// }
+
+
+// export default Navbar
+
+import { Link, NavLink } from "react-router-dom";
+
+function Navbar() {
   return (
-    <div className='nav flex bg-primary justify-between p-5 font-bold ' >
-    <div className="logo">
-      <span className='font-bold text-3xl mx-8 mt-8 '>PlanWhatYouDo</span>
-    </div>
-    <ul className="flex list-none gap-12 mx-10 text-2xl   ">
-      
-        <li className='cursor-pointer hover:font-extrabold transition-all duration-75 '>Home</li>
-        <li className='cursor-pointer hover:font-extrabold transition-all duration-75 '>Tasks</li>
-      
-    </ul>
-    </div>
-  )
+    <nav className="flex gap-6 p-4 bg-violet-500 text-white font-bold">
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "text-yellow-300" : ""
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/tasks"
+        className={({ isActive }) =>
+          isActive ? "text-yellow-300" : ""
+        }
+      >
+        Tasks
+      </NavLink>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
