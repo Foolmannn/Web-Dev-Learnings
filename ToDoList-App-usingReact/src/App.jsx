@@ -13,29 +13,28 @@ export default function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-const [showfinished, setshowfinished] = useState(false)
-
+  const [showfinished, setshowfinished] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   const handleEdit = (e) => {
-    let todoToEdit = todos.filter((item)=>{
-      return item.id===e.target.id;
-    })
+    let todoToEdit = todos.filter((item) => {
+      return item.id === e.target.id;
+    });
     // console.log(todoToEdit)
-    settodo(todoToEdit[0].todo)
-   let id = e.target.id;
+    settodo(todoToEdit[0].todo);
+    let id = e.target.id;
     // console.log(id);
     let newTodos = todos.filter((item) => {
       return item.id !== id;
     });
-    settodos(newTodos)
+    settodos(newTodos);
   };
 
   const handleDelete = (e) => {
-    confirm("Do you want to delete this todo..")
+    confirm("Do you want to delete this todo..");
     let id = e.target.id;
     // console.log(id);
     let newtodos = todos.filter((item) => {
@@ -74,9 +73,9 @@ const [showfinished, setshowfinished] = useState(false)
     settodos(newtodos);
   };
 
-  const togglefinished =(e)=>{
-setshowfinished(!showfinished) 
-  }
+  const togglefinished = (e) => {
+    setshowfinished(!showfinished);
+  };
 
   return (
     <>
@@ -89,59 +88,84 @@ setshowfinished(!showfinished)
             onChange={handleChange}
             value={todo}
             type="text"
-            className="w-2/3 h-10  bg-bg rounded border-0  "
+            className="w-2/3 h-10 text-xl font-bold   bg-bg rounded border-0  "
           />
 
           <button
-            onClick={handleAdd} disabled={todo.length<5}
+            onClick={handleAdd}
+            disabled={todo.length < 5}
             className=" font-bold bg-primary-dark py-1  px-3 rounded-md hover:bg-primary cursor-pointer  text-white ml-5 disabled:bg-warning "
           >
             Add
           </button>
         </div>
+        <div className="mini flex gap-10 ">
+          <h2 className=" text-black font-bold text-2xl ">Your Todos</h2>
+          {/* <input
+            type="checkbox"
+            onChange={togglefinished}
+            checked={showfinished}
+            className="w-6 "
+            /> */}
+            <div className="px-10 gap-5  ">
 
-        <h2 className="bg text-black font-bold text-2xl ">Your Todos</h2>
-<input type="checkbox" onChange={togglefinished} checked={showfinished} /> Show Finished
+            <span className="font-bold text-2xl ">Show Finished</span>
+            <div className=" inline p-7 ">
+
+          <div class="relative inline-block w-11 h-5 ">
+  <input type="checkbox"    onChange={togglefinished}
+            checked={showfinished} id="switch" class="peer appearance-none w-11 h-5 bg-slate-100 rounded-full checked:bg-blue-600 cursor-pointer transition-colors duration-300" />
+  <label for="switch" class="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-blue-600 cursor-pointer"></label>
+            </div>
+            </div>
+            </div>
+</div>   
         <div className="todos">
-          {todos.length===0 && <div className="m-4 font-bold text-3xl text-danger">No Todos to display</div>}
+          {todos.length === 0 && (
+            <div className="m-4 font-bold text-3xl text-danger">
+              No Todos to display
+            </div>
+          )}
           {todos.map((items) => {
-            return (showfinished || !items.isCompleted) && (
-              <div
-                className="todo py-2 flex gap-10 w-2/4 justify-between "
-                key={items.todo}
-              >
-                <input
-                  checked={items.isCompleted}
-                  onChange={handleCheckbox}
-                  type="checkbox"
-                  className="w-6 "
-                  value={items.isCompleted}
-                  id={items.id}
-                />
-
+            return (
+              (showfinished || !items.isCompleted) && (
                 <div
-                  className={`${items.isCompleted ? "bg-success" : "bg-danger"} font-bold rounded-md p-1 text-white   `}
+                  className="todo py-2 flex gap-10 w-2/4 justify-between "
+                  key={items.todo}
                 >
-                  {items.todo}
-                </div>
-                {/* this is how to add the conditons and normal css classes we need to usethe template  strings  */}
-                <div className="btns flex gap-3 ">
-                  <button
-                    onClick={handleEdit}
-                    className="edit font-bold  bg-primary-dark  py-1  px-3 rounded-md hover:bg-primary  cursor-pointer  text-white "
+                  <input
+                    checked={items.isCompleted}
+                    onChange={handleCheckbox}
+                    type="checkbox"
+                    className="w-6 "
+                    value={items.isCompleted}
                     id={items.id}
+                  />
+
+                  <div
+                    className={`${items.isCompleted ? "bg-success" : "bg-danger"} font-bold rounded-md p-1 text-white   `}
                   >
-                    Edit
-                  </button>
-                  <button
-                    onClick={handleDelete}
-                    className="delete font-bold  bg-primary-dark py-1  px-3 rounded-md hover:bg-primary cursor-pointer  text-white "
-                    id={items.id}
-                  >
-                    Delete
-                  </button>
+                    {items.todo}
+                  </div>
+                  {/* this is how to add the conditons and normal css classes we need to usethe template  strings  */}
+                  <div className="btns flex gap-3 ">
+                    <button
+                      onClick={handleEdit}
+                      className="edit font-bold  bg-primary-dark  py-1  px-3 rounded-md hover:bg-primary  cursor-pointer  text-white "
+                      id={items.id}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={handleDelete}
+                      className="delete font-bold  bg-primary-dark py-1  px-3 rounded-md hover:bg-primary cursor-pointer  text-white "
+                      id={items.id}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )
             );
           })}
         </div>
