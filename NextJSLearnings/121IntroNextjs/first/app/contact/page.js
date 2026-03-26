@@ -1,14 +1,11 @@
 import React from 'react'
-import Navbar from './components/Navbar'
 
 const page = () => {
   return (
     <div>
-      <Navbar />
-      I am home page 
+      I am the contact page.
     </div>
   )
 }
 
 export default page
-
