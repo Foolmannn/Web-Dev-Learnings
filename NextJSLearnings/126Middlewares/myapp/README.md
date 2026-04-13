@@ -2,6 +2,7 @@ Middleware in Next.js is a way to run code **before a request is completed**—b
 
 Middleware is renamed to proxy.js in NextJs due to confusion with the middleware of the express
 
+https://nextjs.org/docs/app/api-reference/file-conventions/proxy
 
 Think of it like a **gatekeeper** 🚪:
 
