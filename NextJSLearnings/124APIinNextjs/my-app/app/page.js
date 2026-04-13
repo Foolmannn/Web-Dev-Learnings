@@ -7,7 +7,7 @@ export default function Home() {
       name: "Suman",
       role: "coder",
     };
-    let a = await fetch("./api/add", {
+    let a = await fetch("/api/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
