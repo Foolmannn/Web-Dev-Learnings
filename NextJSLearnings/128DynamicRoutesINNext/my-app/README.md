@@ -1,6 +1,7 @@
 Dynamic routes in Next.js let you create pages based on variable data (like IDs, slugs, usernames, etc.)—super useful for blogs, products, user profiles, etc.
 
 ---
+https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes
 
 # 🚀 What are Dynamic Routes?
 
@@ -182,4 +183,9 @@ const Blog = () => {
 * Access via `params`
 
 ---
+# For custom not found page we can:
+https://nextjs.org/docs/app/api-reference/file-conventions/not-found
 
+
+# For custom error page we can:
+https://nextjs.org/docs/app/api-reference/file-conventions/error
